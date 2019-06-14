@@ -29,8 +29,8 @@ This Code Challenge is designed to test your abilities in a similar situation to
 Today we're building an app for viewing, liking, and commenting on a single picture. There is a backend API deployed on a server that you will use. You will be building out the frontend for this app.
 
 A user of your app must be able to do the following things:
-
-- As a user, when the page loads, I should see:
+ 
+<!-- - As a user, when the page loads, I should see:
   - an image
   - any comments that image has
   - the number of likes that image has
@@ -39,7 +39,7 @@ A user of your app must be able to do the following things:
 
 - As a user, I can enter text in an input field, and submit the form that the input is in. When I do, the app should add comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
 
-- As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API.
+- As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API. -->
 
 ## Functionality demo
 
@@ -51,7 +51,7 @@ For this challenge it is important to work iteratively: one feature at a time, b
 
 We have provided a series of prioritized steps to help you break down your approach this problem:
 
-## Step 1 - Get the Image Data
+<!-- ## Step 1 - Get the Image Data
 
 When the page loads, you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API.
 
@@ -86,26 +86,26 @@ Example Response:
 }
 ```
 
-Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update:
+Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update: -->
 
-- the image url
+<!-- - the image url
 - the image name
 - the number of likes
-- any comments in an unordered list
+- any comments in an unordered list -->
 
 (If you cannot get your fetch request to work correctly, you can  use the example response above to append content to the DOM and attempt the subsequent steps)
 
-## Step 2 - Like Feature (Frontend)
+<!-- ## Step 2 - Like Feature (Frontend)
 
 The next feature to approach is the functionality to add likes to a picture. First, get this working in the browser only without worrying about persistence.
 
 Clicking the 'Like' button should increase the number of likes shown on the page by one.
 
-A user can like the same picture multiple times.
+A user can like the same picture multiple times. -->
 
 ---
 
-## Step 3 - Like Feature (Backend)
+<!-- ## Step 3 - Like Feature (Backend)
 
 This app will use what is called _optimistic rendering_. This means the DOM will be updated *before* the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next, your job is to make a POST request to persist the new Like in the backend database.
 
@@ -142,17 +142,17 @@ Example Response:
 
 Since we are using optimistic rendering, you shouldn't have to do anything with the response.
 
-To test your code, make sure the number of likes increments when you click the like button. Then, refresh the page and make sure the increased number of likes remains the same.
+To test your code, make sure the number of likes increments when you click the like button. Then, refresh the page and make sure the increased number of likes remains the same. -->
 
 ---
 
-## Step 4 - Comment Feature (Frontend)
+<!-- ## Step 4 - Comment Feature (Frontend)
 
 The next feature to approach is the functionality to add comments to a picture. First, get this working in the browser only, without worrying about persistence.
 
-Filling out the input and clicking 'Submit' should append your new comment as an `<li>` to the comments unordered list element. You should also clear out the text in the comment input, so it's empty and ready for the next comment to be added.
+Filling out the input and clicking 'Submit' should append your new comment as an `<li>` to the comments unordered list element. You should also clear out the text in the comment input, so it's empty and ready for the next comment to be added. -->
 
-## Step 5 - Comment Feature (Backend)
+<!-- ## Step 5 - Comment Feature (Backend)
 
 As before, we need to persist the comment to the database, after optimistically rendering a comment.
 
@@ -192,7 +192,7 @@ Example Response (created comment):
 
 Since we are using optimistic rendering, you shouldn't have to do anything with the response.
 
-To test your code you should be able to refresh the page and see any comments you added.
+To test your code you should be able to refresh the page and see any comments you added. -->
 
 ## BONUS - NOT REQUIRED
 
