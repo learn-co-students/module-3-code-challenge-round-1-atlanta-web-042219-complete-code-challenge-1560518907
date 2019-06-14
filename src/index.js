@@ -34,7 +34,7 @@ function displayPic(pic) {
 }
 
 function displayComment(comment) {
-  comments.innerHTML += `<li data-id="${comment.id}">${comment.content}<span><button class="2nd best">Edit</button></span><span><button class="best button">x</button></span></li>`
+  comments.innerHTML += `<li data-id="${comment.id}">${comment.content}<span><button class="best button">x</button></span></li>`
 }
 
 function addLike(e) {
@@ -65,28 +65,28 @@ function addComment(e) {
 
 function handleClicks(e) {
   if (e.target.className === "best button") deleteComment(e)
-  if (e.target.className === "2nd best") editComment(e)
+  // if (e.target.className === "2nd best") editComment(e)
 }
 
 function deleteComment(e) {
-  const comment = e.target.parentElement
+  const comment = e.target.parentElement.parentElement
   fetch(commentsURL + `/${comment.dataset.id}`, {
     method: 'DELETE'
   }).then(() => comment.remove())
 }
 
-function editComment(e) {
-  editHolder = e.target.parentElement.parentElement
-  const comment = e.target.parentElement.parentElement.innerText.split('Editx')[0]
-  const result = prompt(`Edit Comment`, comment)
-  console.log(editHolder.dataset.id);
-  editHolder.innerHTML = `${result}<span><button class="2nd best">Edit</button></span><span><button class="best button">x</button></span>`
-  fetch(commentsURL + `${editHolder.dataset.id}`, {
-    method: 'PATCH',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ content: result })
-  })
-}
+// function editComment(e) {
+//   editHolder = e.target.parentElement.parentElement
+//   const comment = e.target.parentElement.parentElement.innerText.split('Editx')[0]
+//   const result = prompt(`Edit Comment`, comment)
+//   console.log(editHolder.dataset.id);
+//   editHolder.innerHTML = `${result}<span><button class="2nd best">Edit</button></span><span><button class="best button">x</button></span>`
+//   fetch(commentsURL + `${editHolder.dataset.id}`, {
+//     method: 'PATCH',
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ content: result })
+//   })
+// }
